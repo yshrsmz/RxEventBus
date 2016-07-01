@@ -1,0 +1,6 @@
+ext {
+    metadata = [groupId   : 'net.yslibrary.rxeventbus',
+                website   : 'https://github.com/yshrsmz/RxEventBus',
+                repository: 'git@github.com:yshrsmz/RxEventBus.git',
+                licences  : ['Apache-2.0']]
+}
