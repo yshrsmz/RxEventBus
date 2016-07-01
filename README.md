@@ -14,6 +14,6 @@ You can check the latest version number from the badge above.
 
 ```gradle
 dependencies {
-  compile 'net.yslibrary.licenseadapter:licenseadapter:LATEST_LIBRARY_VERSION'
+  compile 'net.yslibrary.rxeventbus:rxeventbus:LATEST_LIBRARY_VERSION'
 }
 ```
