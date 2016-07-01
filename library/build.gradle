@@ -3,20 +3,23 @@ apply plugin: 'com.github.ben-manes.versions'
 apply plugin: 'com.novoda.bintray-release'
 
 dependencies {
-    compile 'io.reactivex:rxjava:1.1.6'
+  targetCompatibility = '1.7'
+  sourceCompatibility = '1.7'
 
-    testCompile 'junit:junit:4.12'
-    testCompile 'org.assertj:assertj-core:3.3.0'
+  compile 'io.reactivex:rxjava:1.1.6'
+
+  testCompile 'junit:junit:4.12'
+  testCompile 'org.assertj:assertj-core:3.3.0'
 }
 
 publish {
-    artifactId = 'rxeventbus'
-    desc = 'yet another EventBus implementation in RxJava'
+  artifactId = 'rxeventbus'
+  desc = 'yet another EventBus implementation in RxJava'
 
-    def metadata = project.rootProject.ext.metadata
-    groupId = metadata.groupId
-    publishVersion = metadata.version
-    website = metadata.website
-    repository = metadata.repository
-    licences = metadata.licences
+  def metadata = project.rootProject.ext.metadata
+  groupId = metadata.groupId
+  publishVersion = metadata.version
+  website = metadata.website
+  repository = metadata.repository
+  licences = metadata.licences
 }

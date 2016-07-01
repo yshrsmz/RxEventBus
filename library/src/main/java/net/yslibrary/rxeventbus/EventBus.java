@@ -5,32 +5,32 @@ import rx.subjects.PublishSubject;
 import rx.subjects.SerializedSubject;
 
 public final class EventBus {
-    private final SerializedSubject<Event, Event> mBus = new SerializedSubject<>(PublishSubject.create());
+  private final SerializedSubject<Event, Event> mBus = new SerializedSubject<>(PublishSubject.<Event>create());
 
-    public void emit(Event event) {
-        mBus.onNext(event);
-    }
+  public void emit(Event event) {
+    mBus.onNext(event);
+  }
 
-    public Observable<Event> asObservable() {
-        return mBus.asObservable();
-    }
+  public Observable<Event> asObservable() {
+    return mBus.asObservable();
+  }
 
-    public <R extends Event> Observable<R> on(Class<R> eventType) {
-        return mBus.ofType(eventType);
-    }
+  public <R extends Event> Observable<R> on(Class<R> eventType) {
+    return mBus.ofType(eventType);
+  }
 
-    public <R extends Event> Observable<R> on(Class<R> eventType, R initialValue) {
-        return mBus.ofType(eventType).startWith(initialValue);
-    }
+  public <R extends Event> Observable<R> on(Class<R> eventType, R initialValue) {
+    return mBus.ofType(eventType).startWith(initialValue);
+  }
 
-    public boolean hasObservers() {
-        return mBus.hasObservers();
-    }
+  public boolean hasObservers() {
+    return mBus.hasObservers();
+  }
 
-    /**
-     * empty interface to restrict EventBus' value
-     */
-    public interface Event {
+  /**
+   * empty interface to restrict EventBus' value
+   */
+  public interface Event {
 
-    }
+  }
 }
